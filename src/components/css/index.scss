@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0B2434;
+  font-family: Karla, sans-serif;
+  overflow: hidden;
+}
+
+.shadow {
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .6;
+  filter: alpha(opacity=50);
+  z-index: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:#F5F5F5 ;
+  height: 800px;
+  width: 900px;
+  border-radius: 20px;
+  color: #2B283A;
+  text-align: center;
+
+  .main-header {
+    font-size: 50px;
+  }
+
+  .main-info {
+    font-size: 40px;
+    margin: 30px 30px 15px;
+  }
+
+  .main-dices {
+    width: 90%;
+
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .dice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#FFFFFF;
+    font-size: 80px;
+    font-weight: bolder;
+    margin: 20px 40px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+  .button-dice {
+    margin-top: 3px;
+    font-size: 40px;
+    border-radius: 10px;
+    padding: 10px 60px;
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+    color: black;
+    cursor: pointer;
+    border: none;
+  }
+
+  .button-dice:hover {
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  }
+
+  .button-winner {
+    font-size: 40px;
+    padding: 20px 80px;
+    background: #5035FF;
+    box-shadow: 0 3.2px 7.68px rgba(0, 0, 0, 0.18);
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    border: none;
+    z-index: 0;
+  }
+
+  .winner {
+    transition: animation .5s;
+    animation: winner .7s forwards;
+    position: absolute;
+    font-size: 35px;
+    width: 600px;
+    height: 300px;
+    background: #918E9B;
+    border-radius: 30px;
+
+    .fa-trophy {
+      font-size: 90px;
+      color: gold;
+      margin: 20px 0;
+    }
+
+    .winner-box {
+      margin: 35px auto;
+    }
+
+  }
+}
+
+
+@media(max-width:992px) {
+  .main {
+    width: 700px;
+
+    .main-info {
+      font-size: 35px;
+    }
+
+    .dice {
+      font-size: 70px;
+      margin: 40px 30px 30px;
+    }
+
+    .winner {
+      font-size: 30px;
+      width: 500px;
+      height: 300px;
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .main {
+    width: 650px;
+
+    .main-info {
+      font-size: 30px;
+    }
+
+    .dice {
+      font-size: 65px;
+      margin: 10px 30px 60px;
+    }
+
+    .winner {
+      font-size: 20px;
+      width: 300px;
+      height: 250px;
+    }
+  }
+}
+
+@media(max-width:650px) {
+  .main {
+    width: 550px;
+    height: 600px;
+
+    .main-info {
+      font-size: 25px;
+    }
+
+    .dice {
+      font-size: 65px;
+      margin: 5px 20px 60px;
+    }
+
+    .winner {
+      font-size: 15px;
+      width: 200px;
+      height: 250px;
+    }
+
+
+    .button-winner {
+      font-size: 30px;
+      padding: 10px 30px;
+    }
+  }
+}
+
+
+
+@media(max-width:576px) {
+  .main {
+    width: 500px;
+
+    .main-info {
+      font-size: 20px;
+    }
+
+    .dice {
+      font-size: 55px;
+      margin: 10px 20px 60px;
+    }
+  }
+}
+
+@media(max-width:375px) {
+  .main {
+    width: 375px;
+    height: 667px;
+    border-radius: 0;
+
+    .button-dice {
+      margin-top: 3px;
+      font-size: 40px;
+      padding: 5px 20px;
+    }
+
+    .main-info {
+      font-size: 20px;
+    }
+
+    .dice {
+      font-size: 50px;
+      margin: 20px 10px 25px;
+    }
+
+
+    .main-dices {
+      margin-bottom: 30px;
+
+    }
+  }
+}
+
+
+
+@media(max-width:320px) {
+  .main {
+    width: 320px;
+    height: 568px;
+    border-radius: 0;
+
+    .button-dice {
+      margin-top: 3px;
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+
+    .main-info {
+      font-size: 15px;
+    }
+
+    .dice {
+      font-size: 40px;
+      margin: 10px 10px 30px;
+    }
+
+    .button-dice {
+      font-size: 30px;
+    }
+  }
+}
+
+@keyframes winner {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: 30%
+  }
+}
+
+
